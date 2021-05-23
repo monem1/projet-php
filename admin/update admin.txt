@@ -1,0 +1,15 @@
+1 / CREATE TABLE   AGENTS   INSERT  ADMIN  with TYPE Agent
+
+2 / UPDATE agents
+SET  statut = '1'
+WHERE login = 'admin';
+
+3 / ADMINISTRATEUR Fait Enregistrements des differents  Agents de l' ATTT      AJOUTER AGENT      Agent/Ordonnanceur
+
+4 / ADMINISTRATEUR  Inserer tous les Fournisseurs par table SQL
+
+5 / CREATE TABLE FACTURES
+
+6 / ENREGISTREMENT  DES  FACTURES BOC
+
+7 / DEROULEMENT DE CYCLE   
