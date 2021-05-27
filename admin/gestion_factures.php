@@ -10,40 +10,41 @@
 <?php
 require('../connexion/fonction_bare_des_pages.php');
 ?>
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SUIVIE  FACTURES</title>
-<link href="../css/bootstrap.min.css" rel="stylesheet" >  
-</head>
-
-<body>
-                                <br/>
-<div class="container"> 
-<center>
-    <h2> TOUS LES FACTURES ENREGISTRER  DANS L 'APPLICATION </h2>
-</center>
-  
-<a href="home.php"class="btn btn-dark float-right"> Home  </a>
-
-								<br><br>
-
-<a href="chercher_facture.php" class="btn btn-warning float-right">search </a> 
-
-<div class="table-responsive">
-        <table class="table table-hover table-bordered">
-            <thead>
-               <th>Nboc</th>
-                <th>Societe</th>
-                <th>Montant</th>
-                <th>Creation</th>
-                <th>Etape</th>
-                <th>Ordonnanceur</th>  
-                <th colspan = '3'>Action  </th>
-            </thead>
-            <tbody>
+<?php require('../pages/header.php');?>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <?php require('../pages/sidebar.php') ;?>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			 <!-- Topbar -->
+			 <?php require('../pages/navbar.php');?>
+                <!-- End of Topbar -->
+                <div class="container-fluid"> 
+                <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">liste des factures</h6>
+				<div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                   <thead>
+                    <th>Nboc</th>
+                    <th>Societe</th>
+                    <th>Montant</th>
+                    <th>Creation</th>
+                    <th>Etape</th>
+                    <th>Ordonnanceur</th>  
+                    <th>Reclamer</th>
+                    <th>Passer</th>
+                    <th>Supprimer</th>
+                   </thead>
+                  <tbody>             
 <?php
 // on se connecte à notre base
   include '../connexion/config.php'; 
@@ -70,7 +71,7 @@ else
 	$nb_affichage_par_page = 6;
 
 	// Préparation de la requête avec le LIMIT
-	$sql = 'SELECT * FROM factures ORDER BY id DESC LIMIT '.$_GET['debut'].','.$nb_affichage_par_page;
+	$sql = 'SELECT * FROM factures';
 
 	// on exécute la requête
 	$req = mysqli_query($conn ,$sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysqli_error());
@@ -89,16 +90,15 @@ echo'<td>' . $data['Etape'] . '</td><p>';
 echo'<td>' . $data['Ordonnanceur'] . '</td><p>';
 
 echo '<td>';
-echo '<a class="btn btn-warning" href="../service_ND.php?id= ' . $data['id'] . ' "> RECLAMER </a> ';
+echo '<a class="" href="../service_ND.php?id= ' . $data['id'] . ' "  id="messagesDropdown" role="button"><i class="fas fa-envelope fa-fw"></i></a> ';
 echo '</td>';
-
 echo'<td>';
-echo '  <a class="btn btn-success"   href="../passer_Facture.php?id= ' . $data['id'] . '  " >REAFFECTER  </a>  ';
+echo '<a class="btn btn-success btn-circle btn-sm" href="../passer_Facture.php?id= ' . $data['id'] . '  ">
+<i class="fas fa-check"></i>';
 echo '</td>';
-
-
 echo '<td>';
-echo '  <a class="btn btn-danger"  href="supprimer_Facture.php?id= ' . $data['id'] . '  " > SUPPRIMER </a> ';
+echo '  <a class="btn btn-danger btn-circle btn-sm"  href="supprimer_Facture.php?id= ' . $data['id'] . '  " >
+<i class="fas fa-trash"></i></a> ';
 echo '</td>';
 echo '</td>';
 echo '</tr>';
@@ -107,9 +107,6 @@ echo '</tr>';
 	// on libère l'espace mémoire alloué pour cette requête
 	mysqli_free_result ($req);
 	echo '</table>';
-
-	// on affiche enfin notre barre
-	echo ''.barre_navigation($nb_total, $nb_affichage_par_page, $_GET['debut'], 3).'';
 }
 // on libère l'espace mémoire alloué pour cette requête
 mysqli_free_result ($resultat);
@@ -117,6 +114,38 @@ mysqli_free_result ($resultat);
 mysqli_close ($conn);
 echo '</table>';
 ?>
+ <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    </tbody>
+    </table>
+</div>
+</div> 
+</div>
+</div> 
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="../login.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- Footer -->
+ <?php require('../pages/footer.php')?>
+            <!-- End of Footer -->
+         </div>
 
 </body>
 </html>
