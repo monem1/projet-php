@@ -41,7 +41,7 @@ require('../connexion/fonction_bare_des_pages.php');
                     <th>Etape</th>
                     <th>Ordonnanceur</th>  
                     <th>Reclamer</th>
-                    <th>Passer</th>
+                    <th>Réaffecter</th>
                     <th>Supprimer</th>
                    </thead>
                   <tbody>             

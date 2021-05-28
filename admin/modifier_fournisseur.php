@@ -34,7 +34,7 @@ if(!isset($_SESSION['login']))
                 <!-- Topbar -->
                 <?php require('../pages/navbar.php');?>
                 <!-- End of Topbar -->
-
+                <div class="container-fluid">
 <?php
 require('../connexion/config.php');
 
@@ -44,7 +44,7 @@ $password = '';
 
 if (isset($_POST['update'] ))
 {
-$id = $_POST['idf'] ;
+$id = $_POST['id'] ;
 $login = $_POST['login'];
 $societe = $_POST['societe'];
 $password = md5($_POST['password']);
@@ -72,38 +72,68 @@ $password = $row['password'];
 
 ?>
 <h1 class="box-title">Modifier le fournisseur <?php echo $login ; ?> </h1> 
-                      <form class="user" method="POST">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="login" name="login" value="<?php echo $login ; ?>" required>
-                                    </div>
-                                </div>
+      <form class="user" method="POST">
                                     <div class="form-group row">
-                                      <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="societe" name="societe" value="<?php echo $societe ; ?> " required>
-                                      </div>
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                            <input type="text" class="form-control form-control-user" id="exampleFirstName"
+            placeholder="login" name="login" value="<?php echo $login ; ?>" required>
+                                                </div>
                                     </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" name="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                                <div class="form-group row">
+                                                      <div class="col-sm-6 mb-3 mb-sm-0">
+                                                            <input type="text" class="form-control form-control-user" id="exampleLastName"
+            placeholder="societe" name="societe" value="<?php echo $societe ; ?> " required>
+                                                      </div>
+                                                </div>
+                                    <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                            <input type="password" name="password" class="form-control form-control-user"
+            id="exampleInputPassword" placeholder="Password">
+                                                </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="hidden" name="id" value=<?php echo $_GET['id'];?> > 
-                                <input type="submit" name="update" class="btn btn-secondary btn-user btn-block" value="modifier fournisseur">
-                                <a href="gestion_fournisseurs.php" class ="btn btn_info">Retournez-vous ici</a>
-                       </form>
+                                    <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                            <input type="hidden" name="id" value=<?php echo $_GET['id'];?> > 
+                                    <input type="submit" name="update" class="btn btn-primary btn-user btn-block" value="modifier fournisseur">
+                                    <a href="gestion_fournisseurs.php" class ="btn btn_info">Retournez-vous ici</a>
+       </form>
+   </div>
+            </div>
+            <!-- End of Main Content -->
+            
+            <!-- Footer -->
+            <?php require('../pages/footer.php');?>
+            <!-- End of Footer -->
 
+        </div>
+        <!-- End of Content Wrapper -->
 
+    </div>
+    <!-- End of Page Wrapper -->
 
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-</fieldset>
-</form>
-</div>
-
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="../login.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
