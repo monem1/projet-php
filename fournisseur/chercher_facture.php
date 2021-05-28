@@ -23,6 +23,12 @@
 			 <!-- Topbar -->
 			 <?php require('../pages/navbar.php');?>
                 <!-- End of Topbar -->
+                <div class="container-fluid"> 
+                <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary"><h2>Bienvenue <?php echo $_SESSION['login']; ?><samp>sur</samp> l'espace de attt pour suivie l'etat de vos vacture</h6>
+                </div>
+                </div>
 <?php
 require('../connexion/config.php');
 
@@ -40,38 +46,60 @@ else
 
 {
 ?>
-
-
-
-<br>
-<br>
-<div class="container">
-
-<form  action="affichier_facture.php" method="post">
-  <h1>ETAT DE VOS FACTURES</h1>      
-
-<br>
-<label class="control-label" style="text-align: left;">ENTREZ NOM SOCIETE </label>
- 
-
-  <br>
-
-<div class="form-group"> 
-<input type="text"class="form-control" name="Societe"placeholder="societe"required />
-</div> 
-                 <br><br>
-<div class="form-group">  
-    <input type="submit" name="submit" value="CHERCHER " class="btn btn-primary" />
+<h1 class="box-title">Entrez nom de societe</h1>
+<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="affichier_facture.php" method="POST">
+<div class="input-group">
+<input type="text" class="form-control bg-light border-0 small" placeholder="votre nom de societe ... "
+                                aria-label="Search" aria-describedby="basic-addon2" name="Societe">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
 </div>
-
- 
-</fieldset>
 </form>
-</div>
-
+<hr>
+<a href="../logout.php" class ="btn btn_info" >Quittez</a>
 <?php } ?>
-</body>
-</html>
+</div>
+    </div>
+    <!-- End of Main Content -->
+    
+    <!-- Footer -->
+    <?php require('../pages/footer.php');?>
+    <!-- End of Footer -->
 
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+<i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="../login.php">Logout</a>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html> 
 
 

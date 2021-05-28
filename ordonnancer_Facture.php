@@ -30,14 +30,15 @@ if(!isset($_SESSION['login'])) {
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        
+        <?php require('pages/sidebaragent.php') ?>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
 			 <!-- Topbar -->
-			 <?php require('pages/navbar.php');?>
+			 <?php require('pages/navbarpasser.php');?>
+       <div class="container-fluid">
 <?php
 require('connexion/config.php');
 
@@ -73,63 +74,68 @@ require('connexion/config.php');
 
 $ordo  = mysqli_query($conn , "SELECT fonction From agents WHERE type LIKE 'O%' ORDER BY fonction")
 ?>
-
-
-
-
-
-<br>
-<br>
-<div class="container">
-
-<form  action="" method="post">
-    
- <center>
-<fieldset>
-    <legend> VERS  ORDONNANCEMENT  </legend> 
-
-</center>
- 
-  <br>
-
-<label class="control-label" style="text-align: left;">ORDONNANCEUR </label>
-
-<div class="form-group"> 
-   <select  class="form-control" name="Ordonnanceur">
-
-     <option>*******</option>
-    <?php
-      while ($d = mysqli_fetch_array($ordo , MYSQLI_ASSOC ))
-       { 
-    ?>
-     <option><?php echo '<td>'. $d['fonction'] . '</td>' ; ?>   </option>
-     <?php } ?>
-
-      
-  </select>
-</div>
-
-
-  
- 
-<br>
-  
-<center>
-  <div class="form-group">
-  <input  type="hidden" name="id" value=<?php echo $_GET['id'];?>    > 
-
-    <input  type="submit" name="update" value="Envoyez la Facture" class="btn btn-primary" />
-
-</div>
-
-    <legend>Pas maintenant?</legend> 
-  <a href="agents/Agent_TRI.php" class ="btn btn_info" >Retournez-vous ici</a>
-</center>
-
-
-</fieldset>
+<form class="user" method="POST">
+  <div class="form-group row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <h1 class="box-title">Vos ordonnancement</h1> 
+         <label class="btn btn-primary">Ordonnanceur </label>
+         <div class="form-group">
+           <select class="form-control " name="Ordonnanceur" id="type" required >
+             <option disabled selected >*******</option>
+             <?php
+               while ($d = mysqli_fetch_array($ordo , MYSQLI_ASSOC ))
+                { 
+             ?>
+              <option><?php echo '<td>'. $d['fonction'] . '</td>' ; ?>   </option>
+              <?php } ?>  
+            </select>
+         </div>
+       <div class="form-group">
+         <input type="hidden" name="id" value=<?php echo $_GET['id'];?>    > 
+        </div>
+        <div class="form-group">
+          <input type="submit"   class="btn btn-primary btn-user btn-block" name="update"   value="Envoyez la Facture " >
+          <legend>Pas maintenant?</legend> 
+          <a href="agents/Agent_TRI.php" class ="btn btn_info" >Retournez-vous ici</a>
+        </div>
 </form>
 </div>
+            </div>
+            <!-- End of Main Content -->
+            
+            <!-- Footer -->
+            <?php require('pages/footer.php');?>
+            <!-- End of Footer -->
 
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="../login.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

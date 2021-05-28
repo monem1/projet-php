@@ -176,11 +176,8 @@ $q="select $id,password from $tablename where login='$login'";
                                         <input type="submit"   class="btn btn-primary btn-user btn-block" name="submit"   value="Connexion " >
                                         <hr>
                                     </form>
-                                    
-                                    
                                     <div class="text-center">
-                                    <a class="small" href="register_Fournisseur.php">S'inscrire</a>
-    
+                                    <a class="small" href="register_Fournisseur.php">Créer un compte!</a>
                                     </div>
                                 </div>
                             </div>

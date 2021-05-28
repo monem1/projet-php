@@ -38,7 +38,7 @@ require('../connexion/fonction_bare_des_pages.php');
                 <h6 class="m-0 font-weight-bold text-primary">liste des agents</h6>
                        <br>
                 <div class="container"> 
-                  <a href="ajouter_agent.php" class="btn btn-primary">Ajouter new agent</a>
+                  <a href="ajouter_agent.php" class="btn btn-primary">Ajouter un agent</a>
                 </div>
                 <div class="card-body">
                 <div class="table-responsive">

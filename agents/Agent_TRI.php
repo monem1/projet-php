@@ -39,7 +39,7 @@
                      <th>Creation</th>
                      <th>Etape</th>
                      <th>Ordonnanceur</th>
-                     <th>Ordonncer</th>
+                     <th>Affecter</th>
                      <th>Reclamer</th>
                      <th>Passer</th>
                     </tr>

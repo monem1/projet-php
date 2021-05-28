@@ -51,7 +51,7 @@ if (isset( $_REQUEST['Societe'] ))
                    </thead>
                   <tbody>
 <?php 
-$sql = "SELECT * FROM factures  WHERE Societe='$societe'   "  ;
+$sql = "SELECT * FROM factures  WHERE societe='$societe'   "  ;
 $result = mysqli_query($conn ,  $sql);
 mysqli_fetch_All($result ,MYSQLI_ASSOC);
 
@@ -72,42 +72,48 @@ echo '</td>';
 echo '</tr>'; 
 }  
 ?>
-         </tbody>
-                  </table>
-                </div>
-                </div>
-<?php require('../pages/footer.php');?>
-            <!-- End of Footer -->
+   
+   </tbody>
 
-        </div>
-        <!-- End of Content Wrapper -->
+</table>
 
+</div>
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Main Content -->
+    
+    <!-- Footer -->
+    <?php require('../pages/footer.php');?>
+    <!-- End of Footer -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+</div>
+<!-- End of Content Wrapper -->
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../login.php">Logout</a>
-                </div>
-            </div>
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+<i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="../login.php">Logout</a>
         </div>
     </div>
+</div>
+</div>
 </body>
-</html>
+</html> 

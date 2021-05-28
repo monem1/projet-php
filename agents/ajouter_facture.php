@@ -59,15 +59,10 @@ if (isset( $_POST['add']))
             if($res)
             {
                 echo "
-                <script>alert('Add Success!')</script>
-               // <p>Cliquez ici pour  <a href='login.php'>connecter</a></p>";
-                 header('location: agents/Agent_BOC.php');
+                <script>alert('Add Success!')</script>";
+                 header('location: Agent_BOC.php');
             }
-
  }
-
- 
-
 }
 
 else
