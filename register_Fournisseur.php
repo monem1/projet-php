@@ -48,10 +48,11 @@ $password = mysqli_real_escape_string($conn, $password);
 
                 if($result)
                 {
-                echo "<div class='sucess'>
-                <h3>Vous êtes nouveau Fournisseur inscrit avec succès.</h3>
-                <p>Cliquez ici pour vous <a href='login.php'>connecter</a></p>
-                </div>";
+                echo '<div class="alert alert-success" role="alert">
+                Vous êtes nouveau Fournisseur inscrit avec succès.
+              </div>
+                <p>Cliquez ici pour vous <a href="login.php">connecter</a></p>
+                ';
                 }
 
       $row= mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -101,7 +102,7 @@ else
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" name="	societe" placeholder="Password" required>
+                                            id="exampleInputPassword" name="password" placeholder="Password" required>
                                     </div>
                                     <div class="form-group">
                                     <input type="submit"   class="btn btn-primary btn-user btn-block" name="submit" value="S'inscrire " >

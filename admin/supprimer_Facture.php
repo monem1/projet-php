@@ -46,29 +46,20 @@
                 <?php require('../pages/navbar.php');?>
                 <!-- End of Topbar -->
                 <div class="container-fluid">
-    <div class="container">
-     
-                <div class="span10 offset1">
-                                 <br>
-                    <center>
-                        <h3>Supprimer une Facture</h3>
-                    </center>
-                     
- <form class="form-horizontal" action="supprimer_Facture.php" method="post">
-
-  <input type="hidden" name="id" value="<?php echo $id;?>"/>
- <p class="alert alert-error">Etes vous sur de supprimer la facture ?</p>
-
-    <div class="form-actions">
-    <button type="submit" class="btn btn-danger">Oui</button>
-    <a class="btn btn-info" href="gestion_factures.php">Non</a>
-    </div>
-</form>
-  </div>
-                 
-    </div> 
-    </div>
+                        <h3>Supprimer une Facture</h3>   
+                      <form  class="user" method="POST" action="supprimer_factures.php">
+                         <input type="hidden" name="id" value="<?php echo $id;?>"/>
+                         <p class="alert alert-error">Etes vous sur de supprimer la facture ?</p>
+                            <div class="form-group row">
+                                       <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <button type="submit" class="btn btn-danger btn-user btn-block">Oui</button>
+                                        <a class="btn btn-secondary btn-user btn-block" href="gestion_factures.php">Non</a>
+                                       </div>
+                            </div>
+                      </form>
+                </div>
             </div>
+
             <!-- End of Main Content -->
             
             <!-- Footer -->
