@@ -22,6 +22,7 @@ if(!isset($_SESSION['login'])) {
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- sweetAlert-->
 </head>
 <body id="page-top">
 
@@ -65,7 +66,14 @@ if (isset($_POST['update'] ))
                   }   
                   else
                   {
-                  header("Location: alert_passer.php");
+                      echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="agents/Agent_BOC.php">Retour a votre espase</a></button>
+                     ';
                   exit();
                   }
           }
@@ -86,31 +94,34 @@ if (isset($_POST['update'] ))
 
                 {
 
-                  header("Location: alert_passer.php");
-                
-                // exit();
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="agents/Agent_TRI.php">Retour a votre espase</a></button>';
+                 exit();
                 }
-
           }
-
-
           if($_SESSION["login"]=="APPRO_BDC")
           {
                 if  ($Etape  == "ORD" or $Etape  ==  "CONT" )
                 //updating the table  
                 {
-
                 $result = mysqli_query($conn, "UPDATE factures SET  Etape= '$Etape'
                 WHERE id=$id");
-
                 header("Location: agents/Agent_APPRO.php");
-
                 }
-
                 else
-
                 {
-                header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="agents/Agent_APPRO.php">Retour a votre espase</a></button>';
                  exit();
                 }
 
@@ -127,12 +138,19 @@ if (isset($_POST['update'] ))
                 WHERE id=$id");
 
                 header("Location: agents/Agent_CON.php");
-                // exit();
+                
 
                 }
                 else
                 {
-                                header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="agents/Agent_CON.php">Retour a votre espase</a></button>';
+                     exit();
                 }
 
           }
@@ -152,13 +170,16 @@ if (isset($_POST['update'] ))
                 else
                 
                 {  
-                header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="agents/Agent_COM.php">Retour a votre espase</a></button>';
+                     exit();
                 }
-                // exit();
-              
-          }
-
-
+            }
           if($_SESSION["login"]=="TRE")
           {
                 if  ($Etape  == "COMP"  or $Etape  ==  "PDG" )
@@ -171,9 +192,16 @@ if (isset($_POST['update'] ))
                 }
                 else
                 {  
-                header("Location: alert_passer.php");
+                echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="agents/Agent_TRE.php">Retour a votre espase</a></button>';
+                     exit();
                 }
-                // exit();
+                
 
           }
 
@@ -199,7 +227,14 @@ if (isset($_POST['update'] ))
 
                 else
                 { 
-                header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     Retour a votre espase</a></button>';
                 exit();
                 }
 
@@ -218,8 +253,14 @@ if (isset($_POST['update'] ))
                 }
                 else
                 {
-                
-                    header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     Retour a votre espase</a></button>';
                 exit();
                 }
 
@@ -239,8 +280,14 @@ if (isset($_POST['update'] ))
                 }
                 else
                 {
-                
-                    header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     Retour a votre espase</a></button>';
                 exit();
                 }
 
@@ -260,8 +307,14 @@ if (isset($_POST['update'] ))
                 }
                 else
                 {
-                
-                    header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     Retour a votre espase</a></button>';
                 exit();
                 }
 
@@ -280,8 +333,14 @@ if (isset($_POST['update'] ))
                 }
                 else
                 {
-                
-                    header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     Retour a votre espase</a></button>';
                 exit();
                 }
 
@@ -300,8 +359,14 @@ if (isset($_POST['update'] ))
                 }
                 else
                 {
-                
-                    header("Location: alert_passer.php");
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'vous ne pouvez pas faire ca!',
+                      })</script>";
+                     echo ' 
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     Retour a votre espase</a></button>';;
                 exit();
                 }
 

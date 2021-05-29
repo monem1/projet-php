@@ -30,7 +30,8 @@
                 <?php require('../pages/navbar.php');?>
                 <!-- End of Topbar -->
                 <div class="container-fluid">
-                 <h1>salut</h1>
+                <h1>Bienvenue <?php echo $_SESSION['login']; ?>!</h1>
+    		    <p>C'est votre espace utilisateur.</p>
                 </div>
             </div>
             <!-- End of Main Content -->
