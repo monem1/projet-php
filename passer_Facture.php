@@ -221,7 +221,7 @@ if (isset($_POST['update'] ))
                 {
 
                 $result = mysqli_query($conn, "UPDATE factures SET  Etape= '$Etape' WHERE id=$id");
-                header("Location: ordonnanceur/chercher_facture.php");
+                header("Location: ordonnanceur/Agent_INFO.php");
                 
                 }
 
@@ -233,7 +233,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/Agent_INFO.php">
                      Retour a votre espase</a></button>';
                 exit();
                 }
@@ -248,7 +248,7 @@ if (isset($_POST['update'] ))
 
                 $result = mysqli_query($conn, "UPDATE factures SET  Etape= '$Etape' WHERE id=$id");
 
-                header("Location: ordonnanceur/chercher_facture.php");
+                header("Location: ordonnanceur/Agent_APPRO_ORD.php");
                 
                 }
                 else
@@ -259,7 +259,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/Agent_APPRO_ORD.php">
                      Retour a votre espase</a></button>';
                 exit();
                 }
@@ -275,7 +275,7 @@ if (isset($_POST['update'] ))
 
                 $result = mysqli_query($conn, "UPDATE factures SET  Etape= '$Etape' WHERE id=$id");
 
-                header("Location: ordonnanceur/chercher_facture.php");
+                header("Location: ordonnanceur/Agent_DA.php");
                 
                 }
                 else
@@ -286,7 +286,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/Agent_DA.php">
                      Retour a votre espase</a></button>';
                 exit();
                 }
@@ -302,7 +302,7 @@ if (isset($_POST['update'] ))
 
                 $result = mysqli_query($conn, "UPDATE factures SET  Etape= '$Etape' WHERE id=$id");
 
-                header("Location: ordonnanceur/chercher_facture.php");
+                header("Location: ordonnanceur/Agent_PRE.php");
                 
                 }
                 else
@@ -313,7 +313,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/Agent_PRE.php">
                      Retour a votre espase</a></button>';
                 exit();
                 }
@@ -328,7 +328,7 @@ if (isset($_POST['update'] ))
 
                 $result = mysqli_query($conn, "UPDATE factures SET  Etape= '$Etape' WHERE id=$id");
 
-                header("Location: ordonnanceur/chercher_facture.php");
+                header("Location: ordonnanceur/Agent_JURI.php");
                 
                 }
                 else
@@ -339,7 +339,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/Agent_JURI.php">
                      Retour a votre espase</a></button>';
                 exit();
                 }
@@ -354,7 +354,7 @@ if (isset($_POST['update'] ))
 
                 $result = mysqli_query($conn, "UPDATE factures SET  Etape= '$Etape' WHERE id=$id");
 
-                header("Location: ordonnanceur/chercher_facture.php");
+                header("Location: ordonnanceur/Agent_BAT.php");
                 
                 }
                 else
@@ -365,7 +365,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/chercher_facture.php">
+                     <button type="button" class="btn btn-danger"><a href="ordonnanceur/Agent_BAT.php">
                      Retour a votre espase</a></button>';;
                 exit();
                 }
