@@ -32,7 +32,7 @@ if(!isset($_SESSION['login'])) {
         <!-- Sidebar -->
        
         <!-- End of Sidebar -->
-
+        <?php require('pages/sidebaragent.php') ?>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -72,7 +72,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="agents/Agent_BOC.php">Retour a votre espase</a></button>
+                     <button type="button" class="btn btn-warning"><a href="agents/Agent_BOC.php">Retour a votre espase</a></button>
                      ';
                   exit();
                   }
@@ -100,7 +100,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="agents/Agent_TRI.php">Retour a votre espase</a></button>';
+                     <button type="button" class="btn btn-warning"><a href="agents/Agent_TRI.php">Retour a votre espase</a></button>';
                  exit();
                 }
           }
@@ -121,7 +121,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="agents/Agent_APPRO.php">Retour a votre espase</a></button>';
+                     <button type="button" class="btn btn-warning"><a href="agents/Agent_APPRO.php">Retour a votre espase</a></button>';
                  exit();
                 }
 
@@ -149,7 +149,7 @@ if (isset($_POST['update'] ))
                         text: 'vous ne pouvez pas faire ca!',
                       })</script>";
                      echo ' 
-                     <button type="button" class="btn btn-danger"><a href="agents/Agent_CON.php">Retour a votre espase</a></button>';
+                     <button type="button" class="btn btn-warning"><a href="agents/Agent_CON.php">Retour a votre espase</a></button>';
                      exit();
                 }
 
