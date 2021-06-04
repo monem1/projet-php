@@ -8,7 +8,7 @@
   }
 ?>
 <?php
-require('../connexion/fonction_bare_des_pages.php');
+//require('../connexion/fonction_bare_des_pages.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +93,7 @@ echo '<td>';
 echo '<a class="" href="../service_ND.php?id= ' . $data['id'] . ' "  id="messagesDropdown" role="button"><i class="fas fa-envelope fa-fw"></i></a> ';
 echo '</td>';
 echo'<td>';
-echo '<a class="btn btn-success btn-circle btn-sm" href="../passer_Facture.php?id= ' . $data['id'] . '  ">
+echo '<a class="btn btn-success btn-circle btn-sm" href="reaffecter.php?id= ' . $data['id'] . '  ">
 <i class="fas fa-check"></i>';
 echo '</td>';
 echo '<td>';

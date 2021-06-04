@@ -38,6 +38,7 @@ if(isset($_POST['add']))
 $login = $_POST['login'];
 $societe =$_POST['societe'];
 $password =$_POST['password'];
+$type = $_POST['type'];
       if(mysqli_num_rows(mysqli_query($conn,"SELECT * FROM fournisseurs WHERE login='$login'")) !=0 )
       {
         echo '<div class="sucess">
@@ -46,7 +47,7 @@ $password =$_POST['password'];
       } 
       else 
       {
-        $query = "INSERT into `fournisseurs` (login, societe,  password) VALUES ('$login', '$societe', '$password ')";
+        $query = "INSERT into `fournisseurs` (login, societe,  password ,type) VALUES ('$login', '$societe', '$password ','$type')";
         $result = mysqli_query($conn, $query);
                   if($result)
                   {

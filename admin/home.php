@@ -1,23 +1,23 @@
 <?php
- session_start(); // Initialiser la session
- // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
- if(!isset($_SESSION["login"]))
- {
-   header("Location: ../login.php");
-   exit(); 
- }
+session_start(); // Initialiser la session
+// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+if (!isset($_SESSION["login"])) {
+    header("Location: ../login.php");
+    exit();
+}
 
 ?>
 <!DOCTYPE html>
 <html>
-<?php require('../pages/header.php');?>
+<?php require('../pages/header.php'); ?>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php require('../pages/sidebar.php') ;?>
+        <?php require('../pages/sidebar.php'); ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -27,17 +27,17 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php require('../pages/navbar.php');?>
+                <?php require('../pages/navbar.php'); ?>
                 <!-- End of Topbar -->
                 <div class="container-fluid">
-                <h1>Bienvenue <?php echo $_SESSION['login']; ?>!</h1>
-    		    <p>C'est votre espace utilisateur.</p>
+                    <h1>Bienvenue <?php echo $_SESSION['login']; ?>!</h1>
+                    <p>C'est votre espace utilisateur.</p>
                 </div>
             </div>
             <!-- End of Main Content -->
-            
+
             <!-- Footer -->
-            <?php require('../pages/footer.php');?>
+            <?php require('../pages/footer.php'); ?>
             <!-- End of Footer -->
 
         </div>
@@ -52,8 +52,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -71,4 +70,5 @@
         </div>
     </div>
 </body>
+
 </html>

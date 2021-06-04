@@ -8,7 +8,7 @@
   }
 ?>
 <?php
-require('../connexion/fonction_bare_des_pages.php');
+//require('../connexion/fonction_bare_des_pages.php');
 ?>
 <!DOCTYPE html>
 <html>
