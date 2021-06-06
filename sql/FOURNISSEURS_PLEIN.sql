@@ -8,17 +8,17 @@ CREATE TABLE `fournisseurs` (
 
 
 INSERT INTO `fournisseurs` (`idf`, `login`, `societe`, `password`) VALUES
-(1, 'ARA', 'ARABSOFT', 'ARAara' ),
-(2, 'ADS', 'AFRICA DATA', 'ADSads' ),
-(3, 'TOP', 'TOP CHECK', 'TOPtop' ),
-(4, 'CAP', 'CAPSULE', 'CAPcap' ),
-(5, 'MENI', 'D.MENIF', 'MENImeni' ),
-(6, 'KARA', 'M.KARAZNADJI', 'KARAkara' ),
-(7, 'DAR', 'DAR ANWAR', 'DARdar' ),
-(8, 'SNI', 'SNIPE', 'SNIsni' ),
-(9, 'HOT', 'H.NATIONAL', 'HOThot' ),
-(10,'WOR', 'WORKGROUP', 'WORwor' ),
-(11,'REN', 'RENAULT', 'RENren' ),
-(12,'ETTA', 'ETTAHSIN B.', 'ETTAetta' ),
-(13,'EXC', 'EXCEL CONTROL', 'EXCexc' ),
-(14,'TEL', 'TELECOM', 'TELtel' );
+(1, 'ara', 'ARABSOFT', '123456' ),
+(2, 'ads', 'AFRICA DATA', '123456' ),
+(3, 'top', 'TOP CHECK', '123456' ),
+(4, 'cap', 'CAPSULE', '123456' ),
+(5, 'menif', 'D.MENIF', '123456' ),
+(6, 'kara', 'M.KARAZNADJI', '123456' ),
+(7, 'dar', 'DAR ANWAR', '123456' ),
+(8, 'sni', 'SNIPE', '123456' ),
+(9, 'hot', 'H.NATIONAL', '123456' ),
+(10,'wor', 'WORKGROUP', '123456' ),
+(11,'ren', 'RENAULT', '123456' ),
+(12,'etta', 'ETTAHSIN B.', '123456' ),
+(13,'exc', 'EXCEL CONTROL', '123456' ),
+(14,'tel', 'TELECOM', '123456' );

@@ -47,10 +47,7 @@
                   <tbody>
 <?php 
 
-$sql = "SELECT * FROM factures   
-                        WHERE Etape LIKE'T%' 
-                        
-                        ORDER BY id DESC " ; 
+$sql = "SELECT * FROM factures  WHERE Etape LIKE'T%'  ORDER BY id DESC " ; 
 
 $result = mysqli_query($conn ,  $sql);
 
