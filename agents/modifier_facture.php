@@ -69,39 +69,32 @@ if (!isset($_SESSION['login'])) {
         }
 
         ?>
-
-
-
         <div class="container">
           <form action="modifier_facture.php" method="post">
             <fieldset>
               <!--   <legend> Modifier le  Montant De La  Facture  </legend> -->
               <h3> Modifier Le Montant De La Facture </h3>
-
-              <br>
-
-              <div class="form-group">
-                <input type="text" class="form-control" name="Montant" value="<?php echo $montant; ?> " placeholder="Montant" required />
+              <div class="form-group" id="app1">
+              {{sorce}}
+                <input type="number" min="0" class="form-control" name="Montant" value="<?php echo $montant; ?> " placeholder="Montant" v-model="sorce" required />
               </div>
-
+              <div class="form-group">
+                <input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
+                <input type="submit" name="update" value="Modifier" class="btn btn-primary" />
+              </div>
+              <a href="Agent_BOC.php" class="btn btn_info">Retournez-Vous Ici</a>
+            </fieldset>
+          </form>
         </div>
-
-
-
-        <center>
-          <div class="form-group">
-            <input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
-            <input type="submit" name="update" value="Modifier" class="btn btn-primary" />
-          </div>
-
-
-          <a href="Agent_BOC.php" class="btn btn_info">Retournez-Vous Ici</a>
-        </center>
-
-        </fieldset>
-        </form>
-      </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        var app1 = new Vue({
+            el: '#app1',
+            data: {
+                sorce: ''
+            }
+        })
+        </script>
 </body>
 
 </html>

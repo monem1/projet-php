@@ -111,6 +111,15 @@
                     case 'APPRO_ORD':
                         header('location: ordonnanceur/Agent_APPRO_ORD.php');
                         break;
+                    case 'BAT':
+                        header('location: ordonnanceur/Agent_BAT.php');
+                        break;
+                    case 'DA':
+                        header('location: ordonnanceur/Agent_DA.php');
+                        break;
+                    case 'JURI':
+                        header('location: ordonnanceur/Agent_JURI.php');
+                        break;
 
                     default:
                         header('login.php');
@@ -121,26 +130,34 @@
                 $_SESSION['id'] = $row['idf'];
 
                 switch ($_SESSION['login']) {
-                    case 'ARA':
+                    case 'ara':
                         header('location: fournisseur/Four_ARA.php');
                         break;
 
-                    case 'ETTA':
+                    case 'etta':
                         header('location: fournisseur/Four_ETTA.php');
                         break;
 
-                    case 'CAP':
+                    case 'cap':
                         header('location: fournisseur/Four_CAP.php');
                         break;
 
-                    case 'MENI':
+                    case 'menif':
                         header('location: fournisseur/Four_MENI.php');
                         break;
 
-                    case 'SNI':
+                    case 'sin':
                         header('location: fournisseur/Four_SNI.php');
                         break;
-
+                    case 'ads':
+                        header('location: fournisseur/Four_ADS.php');
+                        break;
+                    case 'tel':
+                        header('location: fournisseur/telecom.php');
+                        break;
+                    case 'top':
+                        header('location: fournisseur/top.php');
+                        break;
                     default:
                         header('login.php');
                         break;

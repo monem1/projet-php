@@ -54,10 +54,7 @@
                   <tbody>
 
 <?php 
-$sql = "SELECT * FROM factures
-                      WHERE Ordonnanceur='D.Administratifs' 
-
-                        ORDER BY id DESC " ;
+$sql = "SELECT * FROM factures WHERE Ordonnanceur='D.Administratifs' AND Etape LIKE 'O%'  ORDER BY id DESC " ;
 
 $result = mysqli_query($conn ,  $sql);
 
