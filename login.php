@@ -120,7 +120,12 @@
                     case 'JURI':
                         header('location: ordonnanceur/Agent_JURI.php');
                         break;
-
+                    case 'PRE':
+                        header('location: ordonnanceur/Agent_PRE.php');
+                        break;
+                    case 'DRTTU':
+                        header('location: ordonnanceur/Agent_DRTTU.php');
+                        break;    
                     default:
                         header('login.php');
                         break;
@@ -157,6 +162,24 @@
                         break;
                     case 'top':
                         header('location: fournisseur/top.php');
+                        break;
+                        case 'wor':
+                            header('location: fournisseur/four_wor.php');
+                            break;
+                    case 'kara':
+                        header('location: fournisseur/four_kara.php');
+                        break;
+                    case 'dar':
+                        header('location : fournisseur/dar.php');
+                        break;
+                    case 'hot':
+                        header('location : fournisseur/four_hot.php');
+                        break;
+                    case 'ren':
+                        header('location : fournisseur/four_ren.php');
+                        break;
+                    case 'exc':
+                        header('location : fournisseur/four_exc.php');
                         break;
                     default:
                         header('login.php');

@@ -38,6 +38,7 @@ if (!isset($_SESSION["login"])) {
                     $Nboc = $_POST['Nboc'];
                     $Societe = $_POST['Societe'];
                     $Montant = $_POST['Montant'];
+                    if(!preg_match("%^[F0-9/]+$%",$Nboc)) { die ("<a href='ajouter_facture.php'>numero boc est faux</a>");}
                     $Creation = isset($_POST['Creation']) ?
                         $_POST['Creation'] : date('Y-m-d');
                     $Etape = $_POST['Etape'];
@@ -77,8 +78,10 @@ if (!isset($_SESSION["login"])) {
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-6">
-                                <select class="custom-select" name="Societe" id="Societe" required>
+                            <div class="col-sm-6" id="app1">
+                            Societe:{{select}}
+                                <select class="custom-select" name="Societe" id="Societe" v-model="select" required>
+                                
                                     <?php
                                     while ($d = mysqli_fetch_array($societes, MYSQLI_ASSOC)) {
                                     ?>
@@ -89,7 +92,7 @@ if (!isset($_SESSION["login"])) {
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-6" id="app1">
+                            <div class="col-sm-6" id="app2">
                             Montant:{{montant}}
                                 <input type="number" class="form-control form-control-user" id="exampleLastName" placeholder="Montant" name="Montant" min="0" v-model="montant" required>
                             </div>
@@ -97,7 +100,7 @@ if (!isset($_SESSION["login"])) {
                         Creation
                         <div class="form-group row">
                             <div class="col-sm-6">
-                                <input type="datetime-local" name="Creation" class="form-control" value="  <?= date('Y-m-d') ?>     ">
+                                <input type="datetime" name="Creation" class="form-control" value="  <?= date('Y-m-d') ?>     ">
                             </div>
                         </div>
 
@@ -132,28 +135,7 @@ if (!isset($_SESSION["login"])) {
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Prêt à partir?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../login.php">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <?php require('../pages/formlogout.php') ?>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script>
         var app = new Vue({
@@ -166,7 +148,15 @@ if (!isset($_SESSION["login"])) {
         var app1 = new Vue({
             el: '#app1',
             data: {
-                montant: ''
+                
+                select:''
+
+            }
+        })
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                montant:''
             }
         })
     </script>

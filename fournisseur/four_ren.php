@@ -35,7 +35,7 @@ if (!isset($_SESSION["login"])) {
                 <div class="container-fluid">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Société Top check</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Société RENAULT</h6>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -54,7 +54,7 @@ if (!isset($_SESSION["login"])) {
                                         <tbody>
 
                                             <?php
-                                            $sql = "SELECT * FROM factures  WHERE Societe='TOP CHECK' ORDER BY id DESC ";
+                                            $sql = "SELECT * FROM factures  WHERE Societe='RENAULT' ORDER BY id DESC ";
 
                                             $result = mysqli_query($conn,  $sql);
 
