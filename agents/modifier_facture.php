@@ -36,65 +36,81 @@ if (!isset($_SESSION['login'])) {
         <!-- Topbar -->
         <?php require('../pages/navbar.php'); ?>
         <!-- End of Topbar -->
-        <?php
-        require('../connexion/config.php');
+        <div class="container-fluid">
+          <?php
+          require('../connexion/config.php');
 
-        //$societe = '';
-        $montant = '';
+          //$societe = '';
+          $montant = '';
 
-        if (isset($_POST['update'])) {
-          $id = $_POST['id'];
-          //$societe = $_POST['Societe'];
-          $montant = $_POST['Montant'];
-          //updating the table   societe='$societe',
-          $result = mysqli_query($conn, "UPDATE factures SET  montant='$montant'  WHERE id=$id");
-          header("Location: Agent_BOC.php");
-          exit();
-        }
+          if (isset($_POST['update'])) {
+            $id = $_POST['id'];
+            //$societe = $_POST['Societe'];
+            $montant = $_POST['Montant'];
+            //updating the table   societe='$societe',
+            $result = mysqli_query($conn, "UPDATE factures SET  montant='$montant'  WHERE id=$id");
+            header("Location: Agent_BOC.php");
+            exit();
+          }
 
 
 
-        ?>
-        <?php
+          ?>
+          <?php
 
-        $id = $_GET['id'];
+          $id = $_GET['id'];
 
-        //selecting data associated with this particular id
-        $result = mysqli_query($conn, "SELECT * FROM factures WHERE id=$id");
+          //selecting data associated with this particular id
+          $result = mysqli_query($conn, "SELECT * FROM factures WHERE id=$id");
 
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+          while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
-          // $societe = $row['Societe'];
-          $montant = $row['Montant'];
-        }
+            // $societe = $row['Societe'];
+            $montant = $row['Montant'];
+          }
 
-        ?>
-        <div class="container">
-          <form action="modifier_facture.php" method="post">
-            <fieldset>
-              <!--   <legend> Modifier le  Montant De La  Facture  </legend> -->
-              <h3> Modifier Le Montant De La Facture </h3>
-              <div class="form-group" id="app1">
-              {{sorce}}
-                <input type="number" min="0" class="form-control" name="Montant" value="<?php echo $montant; ?> " placeholder="Montant" v-model="sorce" required />
+          ?>
+
+          <h3 class="box-title"> Modifier Le Montant De La Facture </h3>
+          <form class="user" method="POST">
+            <div class="form-group row">
+              <div class="col-sm-6" id="app1">
+
+                {{sorce}}
+                <input type="number" min="0" class="form-control form-control-user" name="Montant" value="<?php echo $montant; ?> " placeholder="Montant" v-model="sorce" required />
               </div>
-              <div class="form-group">
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-6">
                 <input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
-                <input type="submit" name="update" value="Modifier" class="btn btn-primary" />
+                <input type="submit" name="update" value="Modifier" class="btn btn-primary btn-user btn-block" />
               </div>
-              <a href="Agent_BOC.php" class="btn btn_info">Retournez-Vous Ici</a>
-            </fieldset>
+            </div>
+            <a href="Agent_BOC.php" class="btn btn_info">Retournez-Vous Ici</a>
+
           </form>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+      </div>
+        <?php require('../pages/footer.php'); ?>
+        <!-- End of Footer -->
+
+      </div>
+      <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+  <?php require('../pages/formlogout.php') ?>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script>
-        var app1 = new Vue({
-            el: '#app1',
-            data: {
-                sorce: ''
-            }
-        })
-        </script>
+      var app1 = new Vue({
+        el: '#app1',
+        data: {
+          sorce: ''
+        }
+      })
+    </script>
 </body>
 
 </html>

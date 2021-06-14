@@ -2,7 +2,7 @@
 
             <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-    <img src="../img/images.jpeg" alt="" height="70">
+    <img src="../img/images.jpeg" alt="" height="50">
         <div class="sidebar-brand-text mx-3"><samp>AT</samp>TT</div>
     </a>
 
@@ -13,7 +13,8 @@
     <li class="nav-item active">
         <a class="nav-link" href="../admin/home.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Home</span></a>
+            <span>Tableau de bord
+</span></a>
     </li>
 
     <!-- Divider -->
@@ -41,7 +42,7 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item active">
-        <a class="nav-link " href="../service_ND.php">
+        <a class="nav-link " href="service_reclamtion.php">
             <i class="fas fa-fw "></i>
             <span>service de réclamation</span>
         </a>
